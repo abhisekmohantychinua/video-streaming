@@ -20,7 +20,7 @@ public class VideoService {
     private static final String PATH_TO_VIDEOS = "./videos/";
 
     public Mono<Resource> getVideoByTitle(String title) throws MalformedURLException {
-            Path pdfPath = Paths.get(PATH_TO_VIDEOS).resolve(title+".mp4");
+            Path pdfPath = Paths.get(PATH_TO_VIDEOS).resolve(title);
             Resource resource = new UrlResource(pdfPath.toUri());
         return Mono.just(resource);
     }

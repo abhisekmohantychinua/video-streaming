@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="container p-2 mt-2 text-center bg-dark">
+    <h2>Video streaming</h2>
+    <video [src]="baseUrl+currentVideo" class="w-100 bg-dark" controls preload="none">
+    </video>
+  </div>
+
+
+  @for (video of videos; track $index) {
+    <button type="button" class="btn btn-primary m-2" (click)="onClick(video)">
+      {{ video }}
+    </button>
+  }
+</div>
